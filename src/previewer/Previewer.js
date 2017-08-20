@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Showdown from 'showdown';
+import Marked from 'marked';
 
 import HtmlPanel from './HtmlPanel';
 import MarkdownPanel from './MarkdownPanel';
@@ -8,7 +8,7 @@ import { initialText } from '../config';
 
 const initialState = {
     currentMarkdown: initialText,
-    currentPreview: (new Showdown.Converter()).makeHtml(initialText),
+    currentPreview: Marked(initialText),
 }
 
 export default class Previewer extends Component {
@@ -20,11 +20,10 @@ export default class Previewer extends Component {
     }
 
     handleTextChange(newMdText) {
-        const converter = new Showdown.Converter();
         this.setState( {
             ...this.state,
             currentMarkdown: newMdText,
-            currentPreview: converter.makeHtml(newMdText),
+            currentPreview: Marked(newMdText),
         })
     }
     

@@ -4,9 +4,9 @@
   "homepage": "https://marianoheller.github.io/markdown-previewer",
   "private": true,
   "dependencies": {
+    "marked": "^0.3.6",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "showdown": "^1.7.1"
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
