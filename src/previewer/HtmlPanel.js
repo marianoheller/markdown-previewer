@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class HtmlPanel extends Component {
     setPreview() {
+        console.log(this.props.currentPreview);
         return { __html: this.props.currentPreview }
     }
 
@@ -9,7 +10,7 @@ export default class HtmlPanel extends Component {
         
         return (
             <div  className="panel-container">
-                <div dangerouslySetInnerHTML={this.setPreview()}>
+                <div id="preview" dangerouslySetInnerHTML={this.setPreview()}>
                 </div>
             </div>
         );

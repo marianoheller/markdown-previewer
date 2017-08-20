@@ -1,11 +1,7 @@
 export const initialText = `
-Heading
-=======
+# Heading
 
-Sub-heading
------------
- 
-### Another deeper heading
+## Sub-heading
  
 Paragraphs are separated
 by a blank line.
@@ -28,6 +24,18 @@ Numbered list:
   2. oranges
   3. pears
 
+Image:
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Blockquote:
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+Code:
+\`\`\`javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+\`\`\`
 
  *[Mariano Heller](https://marianoheller.github.io)*
  `
