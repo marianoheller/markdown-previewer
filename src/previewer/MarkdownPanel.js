@@ -9,8 +9,12 @@ export default class MarkdownPanel extends Component {
     render() {
         return (
         <div className="panel-container">
-            <textarea id="editor" onInput={this.handleChange.bind(this)} defaultValue={this.props.currentMarkdown}>
-                
+            <textarea 
+            id="editor" 
+            onInput={this.handleChange.bind(this)} 
+            defaultValue={this.props.currentMarkdown}
+            rows={40}
+            >
             </textarea>
         </div>
         );
