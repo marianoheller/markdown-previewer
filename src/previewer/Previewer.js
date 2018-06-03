@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-import Marked from 'marked';
+import MarkedBase from 'marked';
 
 import HtmlPanel from './HtmlPanel';
 import MarkdownPanel from './MarkdownPanel';
 
 import { initialText } from '../config';
 
+
+MarkedBase.setOptions({
+  breaks: true,
+});
+const renderer = new MarkedBase.Renderer();
+const linkRenderer = renderer.link;
+renderer.link = (href, title, text) => {
+    const html = linkRenderer.call(renderer, href, title, text);
+    return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
+};
+const Marked = mdText => MarkedBase(mdText, { renderer });
+
 const initialState = {
-    currentMarkdown: initialText,
-    currentPreview: Marked(initialText),
+  currentMarkdown: initialText,
+  currentPreview: Marked(initialText),
 }
 
 export default class Previewer extends Component {
